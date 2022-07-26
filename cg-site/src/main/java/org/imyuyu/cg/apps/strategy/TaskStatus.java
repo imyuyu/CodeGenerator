@@ -1,5 +1,5 @@
 package org.imyuyu.cg.apps.strategy;
 
-public enum BuildStatus {
+public enum TaskStatus {
     Pending, Processing, Complete, Fail,
 }

@@ -6,6 +6,7 @@ import org.imyuyu.cg.apps.applog.Log;
 import org.imyuyu.cg.apps.user.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class TemplateService {
     private TemplateRepository templateRepository;
     private TemplateFormAdapter templateFormAdapter;
 
-    public Page<TemplateDto> getAllTemplates(PageRequest pageRequest) {
+    public Page<TemplateDto> getAllTemplates(Pageable pageable) {
 
         Page<Template> all = templateRepository.findAll(new Specification<Template>() {
             @Nullable
@@ -31,7 +32,7 @@ public class TemplateService {
             public Predicate toPredicate(Root<Template> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
                 return null;
             }
-        }, pageRequest);
+        }, pageable);
         return all.map(new Function<Template, TemplateDto>() {
             @Override
             public TemplateDto apply(Template template) {

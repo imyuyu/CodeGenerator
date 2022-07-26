@@ -9,10 +9,10 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "cg_build")
+@Table(name = "cg_task")
 @Getter
 @Setter
-public class Build extends AbstractPO {
+public class Task extends AbstractPO {
 
     private LocalDateTime startDate;
 
@@ -21,10 +21,10 @@ public class Build extends AbstractPO {
     private Long runTime;
 
     @Enumerated(EnumType.STRING)
-    private BuildStatus status;
+    private TaskStatus status;
 
     @Enumerated(EnumType.STRING)
-    private BuildState state;
+    private TaskState state;
 
     @ManyToOne
     private DataSource dataSource;

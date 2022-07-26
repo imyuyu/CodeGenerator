@@ -17,6 +17,7 @@ public class TemplateFormAdapter {
         template.setName(templateForm.getName());
         template.setCode(templateForm.getCode());
         template.setContent(templateForm.getContent());
+        template.setTemplateEngine(templateForm.getTemplateEngine());
         template.setEnabled(templateForm.isEnabled());
         template.setDeleted(false);
         long fileTypeId = templateForm.getFileType();
@@ -33,6 +34,7 @@ public class TemplateFormAdapter {
         template.setName(templateForm.getName());
         template.setCode(templateForm.getCode());
         template.setContent(templateForm.getContent());
+        template.setTemplateEngine(templateForm.getTemplateEngine());
         template.setEnabled(templateForm.isEnabled());
         long fileTypeId = templateForm.getFileType();
         FileType fileType = fileTypeService.getFileType(fileTypeId);

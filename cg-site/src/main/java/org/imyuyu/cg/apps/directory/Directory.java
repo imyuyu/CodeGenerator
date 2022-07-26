@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.path;
+package org.imyuyu.cg.apps.directory;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,10 +9,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "cg_path")
+@Table(name = "cg_directory")
 @Getter
 @Setter
-public class Path extends AbstractPO {
+public class Directory extends AbstractPO {
 
     /**
      * 名称
@@ -30,9 +30,4 @@ public class Path extends AbstractPO {
      * 只读
      */
     private boolean readonly;
-
-    @OneToMany
-    @JoinTable(name = "path_templates_rel", joinColumns = {@JoinColumn(name = "path_id")},
-        inverseJoinColumns = {@JoinColumn(name = "template_id")})
-    private List<Template> templates;
 }

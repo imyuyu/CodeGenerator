@@ -22,4 +22,7 @@ public class Template extends AbstractPO {
     private FileType fileType;
     @Lob
     private String content;
+
+    @Column(nullable = false)
+    private String templateEngine;
 }

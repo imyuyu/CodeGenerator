@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BuildForm {
+public class TaskForm {
     private Long dataSource;
     private Long strategy;
 }

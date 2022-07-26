@@ -13,6 +13,7 @@ public class TemplateForm implements Serializable {
     private String name;
     private String code;
     private String content;
+    private String templateEngine;
     private long fileType;
     private boolean enabled;
 }

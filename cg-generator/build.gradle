@@ -17,7 +17,11 @@ repositories {
 }
 
 dependencies {
+    implementation project(':cg-common')
+    implementation 'cn.hutool:hutool-all:5.8.3'
     implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
