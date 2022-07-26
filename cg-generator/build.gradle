@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group 'org.imyuyu'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven {
+        allowInsecureProtocol true
+        url 'http://maven.duchaduban.com:8081/repository/maven-public/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

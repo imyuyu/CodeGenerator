@@ -1,0 +1,5 @@
+rootProject.name = 'CodeGenerator'
+include 'cg-generator', 'cg-web'
+include 'cg-site'
+include 'cg-common'
+
