@@ -4,10 +4,11 @@ import org.imyuyu.cg.apps.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 import java.time.LocalDateTime;
 
-@Mapper
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, imports = {LocalDateTime.class})
 public interface FileTypeMapper {
 
     FileTypeMapper MAPPER = Mappers.getMapper(FileTypeMapper.class);
