@@ -21,8 +21,6 @@ import java.io.Serializable;
  * po超类
  */
 @MappedSuperclass
-@Getter
-@Setter
 public abstract class BasePO implements Serializable, Persistable<Long> {
     @JsonIgnore
     @Transient
@@ -37,6 +35,16 @@ public abstract class BasePO implements Serializable, Persistable<Long> {
      */
     public void setNewId() {
         setId(IdUtil.getSnowflakeNextId());
+    }
+
+    @Override
+    @Nullable
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(@Nullable Long id) {
+        this.id = id;
     }
 
     @Transient

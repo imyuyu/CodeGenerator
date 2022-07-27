@@ -18,6 +18,11 @@ public class R<T> {
     private T data;
 
     @NonNull
+    public static <T> R<T> ok() {
+        return ok(DefaultResultCode.SUCCESS, null);
+    }
+
+    @NonNull
     public static <T> R<T> ok(@Nullable T data) {
         return ok(DefaultResultCode.SUCCESS, data);
     }
@@ -25,10 +30,5 @@ public class R<T> {
     @NonNull
     public static <T> R<T> ok(@NonNull ResultCode resultCode, @Nullable T data) {
         return new R<>(resultCode.getCode(), resultCode.getMessage(), resultCode.getMessageI18nKey(), data);
-    }
-
-    @NonNull
-    public static <T> R<T> ok(@NonNull ResultCode resultCode) {
-        return ok(resultCode, null);
     }
 }

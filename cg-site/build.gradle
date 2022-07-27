@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    // Allow configuration calls for setting up the eclipse annotation processing configuration.
+    /*id 'net.ltgt.apt-eclipse' version "0.21"*/
 }
 
 group 'org.imyuyu'
@@ -16,6 +18,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     implementation project(':cg-generator')
     implementation project(':cg-common')
@@ -29,9 +32,12 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.flywaydb:flyway-core'
+    compileOnly 'org.mapstruct:mapstruct:1.5.2.Final'
     implementation 'cn.hutool:hutool-all:5.8.3'
     compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
