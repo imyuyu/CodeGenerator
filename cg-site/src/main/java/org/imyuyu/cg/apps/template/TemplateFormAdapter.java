@@ -11,8 +11,13 @@ import java.time.LocalDateTime;
 public class TemplateFormAdapter {
 
     private FileTypeService fileTypeService;
+    private TemplateMapper templateMapper;
 
     public Template createTemplateFromTemplateForm(TemplateForm templateForm, User user) {
+
+        long fileTypeId = templateForm.getFileType();
+        FileType fileType = fileTypeService.getFileType(fileTypeId);
+
         Template template = new Template();
         template.setName(templateForm.getName());
         template.setCode(templateForm.getCode());
@@ -20,8 +25,7 @@ public class TemplateFormAdapter {
         template.setTemplateEngine(templateForm.getTemplateEngine());
         template.setEnabled(templateForm.isEnabled());
         template.setDeleted(false);
-        long fileTypeId = templateForm.getFileType();
-        FileType fileType = fileTypeService.getFileType(fileTypeId);
+
         template.setFileType(fileType);
 
         template.setCreatedBy(user);

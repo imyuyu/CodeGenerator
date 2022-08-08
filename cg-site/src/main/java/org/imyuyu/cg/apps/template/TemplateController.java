@@ -3,6 +3,7 @@ package org.imyuyu.cg.apps.template;
 import lombok.AllArgsConstructor;
 import org.imyuyu.cg.apps.user.User;
 import org.imyuyu.cg.apps.user.UserService;
+import org.imyuyu.cg.common.util.BatchInput;
 import org.imyuyu.cg.common.util.R;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -27,7 +30,7 @@ public class TemplateController {
         return R.ok(post);
     }
 
-    @PostMapping("/{id:\\d+}")
+    @PostMapping("/{id}")
     public R updateTemplate(Principal principal, @PathVariable Long id, @Valid TemplateForm templateForm) {
         Template template = templateService.getTemplate(id);
         User user = userService.fetchUser(principal.getName()).get();
@@ -35,8 +38,25 @@ public class TemplateController {
         return R.ok();
     }
 
-    public R deleteTemplate() {
-
+    @PostMapping("/batch")
+    public R batchProcessingMapping(Principal principal, BatchInput<Long> batchInput) {
+        User user = userService.fetchUser(principal.getName()).get();
+        switch (batchInput.getMethod()) {
+            case DELETE:
+                List<Long> data = batchInput.getData();
+                List<Template> templates = new ArrayList<>();
+                for (Long datum : data) {
+                    Template template = templateService.getTemplate(datum);
+                    if (template == null) {
+                        continue;
+                    }
+                    templates.add(template);
+                }
+                templateService.updateDeleteState(templates, user);
+                break;
+            case UPDATE:
+                break;
+        }
         return R.ok();
     }
 }

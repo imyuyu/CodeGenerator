@@ -15,6 +15,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.function.Function;
 
 @AllArgsConstructor
@@ -61,4 +64,19 @@ public class TemplateService {
         templateRepository.delete(post);
     }
 
+    /**
+     * Update template to deleted
+     * 
+     * @param templates 模板
+     * @param user 用户
+     */
+    public void updateDeleteState(List<Template> templates, User user) {
+        LocalDateTime now = LocalDateTime.now();
+        for (Template template : templates) {
+            template.setDeleted();
+            template.setLastModifiedBy(user);
+            template.setLastModifiedDate(now);
+        }
+        templateRepository.saveAll(templates);
+    }
 }
