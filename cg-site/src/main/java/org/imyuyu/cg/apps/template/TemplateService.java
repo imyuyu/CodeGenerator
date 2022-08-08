@@ -45,16 +45,16 @@ public class TemplateService {
         return templateRepository.findById(templateId).orElseThrow(() -> new TemplateNotFoundException(templateId));
     }
 
-    @Log(value = AppLogType.AddTemplate, params = {@Log.Param("${}")})
+    @Log(value = AppLogType.AddTemplate)
     public Template addTemplate(TemplateForm templateForm, User user) {
         Template template = templateFormAdapter.createTemplateFromTemplateForm(templateForm, user);
         templateRepository.save(template);
         return template;
     }
 
-    public void updateTemplate(Template post, TemplateForm postForm, User user) {
-        templateFormAdapter.updateTemplateFromTemplateForm(post, postForm, user);
-        templateRepository.save(post);
+    public void updateTemplate(Template template, TemplateForm templateForm, User user) {
+        templateFormAdapter.updateTemplateFromTemplateForm(template, templateForm, user);
+        templateRepository.save(template);
     }
 
     public void deleteTemplate(Template post) {

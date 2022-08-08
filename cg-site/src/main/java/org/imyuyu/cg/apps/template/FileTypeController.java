@@ -24,9 +24,6 @@ public class FileTypeController {
     @PostMapping("/{id}")
     public R updateFileType(@PathVariable Long id, @Valid FileTypeForm fileTypeForm) {
         FileType fileType = fileTypeService.getFileType(id);
-        if (fileType == null) {
-
-        }
         return R.ok();
     }
 }
