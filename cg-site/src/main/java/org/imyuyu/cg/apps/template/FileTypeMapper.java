@@ -8,10 +8,8 @@ import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 import java.time.LocalDateTime;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, imports = {LocalDateTime.class})
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, imports = {LocalDateTime.class}, componentModel = "spring")
 public interface FileTypeMapper {
-
-    FileTypeMapper MAPPER = Mappers.getMapper(FileTypeMapper.class);
 
     @Mapping(target = "deleted", expression = "java(false)")
     @Mapping(target = "createdDate", expression = "java(LocalDateTime.now())")
