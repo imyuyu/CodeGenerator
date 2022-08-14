@@ -2,6 +2,7 @@ package org.imyuyu.cg.apps.template;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.imyuyu.cg.apps.filetype.FileTypeDto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

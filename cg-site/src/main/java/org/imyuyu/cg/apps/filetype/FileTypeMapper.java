@@ -1,17 +1,16 @@
-package org.imyuyu.cg.apps.template;
+package org.imyuyu.cg.apps.filetype;
 
-import org.imyuyu.cg.apps.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.ReportingPolicy;
-import org.mapstruct.factory.Mappers;
+
 import java.time.LocalDateTime;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, imports = {LocalDateTime.class}, componentModel = "spring")
 public interface FileTypeMapper {
 
-    @Mapping(target = "deleted", expression = "java(false)")
+    @Mapping(target = "deleted", constant = "false")
     @Mapping(target = "createdDate", expression = "java(LocalDateTime.now())")
     FileType createFileTypeFromFileTypeForm(FileTypeForm fileTypeForm);
 

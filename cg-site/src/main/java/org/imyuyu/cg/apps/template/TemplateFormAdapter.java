@@ -1,6 +1,8 @@
 package org.imyuyu.cg.apps.template;
 
 import lombok.AllArgsConstructor;
+import org.imyuyu.cg.apps.filetype.FileType;
+import org.imyuyu.cg.apps.filetype.FileTypeService;
 import org.imyuyu.cg.apps.user.User;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.template;
+package org.imyuyu.cg.apps.filetype;
 
 import org.imyuyu.cg.common.exception.ResourceNotFoundException;
 

@@ -2,7 +2,7 @@ package org.imyuyu.cg.apps.template;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.imyuyu.cg.apps.strategy.Strategy;
+import org.imyuyu.cg.apps.filetype.FileType;
 import org.imyuyu.cg.common.po.AbstractPO;
 
 import javax.persistence.*;

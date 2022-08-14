@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.template;
+package org.imyuyu.cg.apps.filetype;
 
 import lombok.AllArgsConstructor;
 import org.imyuyu.cg.apps.applog.AppLogType;

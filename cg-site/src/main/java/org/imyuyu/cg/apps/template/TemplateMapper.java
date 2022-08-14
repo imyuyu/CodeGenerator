@@ -1,5 +1,6 @@
 package org.imyuyu.cg.apps.template;
 
+import org.imyuyu.cg.apps.filetype.FileType;
 import org.imyuyu.cg.apps.user.User;
 import org.mapstruct.*;
 
