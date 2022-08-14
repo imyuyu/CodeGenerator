@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

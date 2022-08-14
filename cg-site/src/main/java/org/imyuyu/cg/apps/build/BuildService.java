@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.build;
 
 import cn.hutool.core.util.ZipUtil;
 import cn.hutool.db.meta.MetaUtil;
@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.imyuyu.cg.apps.datasource.DataSource;
 import org.imyuyu.cg.apps.directory.Directory;
+import org.imyuyu.cg.apps.strategy.Strategy;
+import org.imyuyu.cg.apps.strategy.StrategyDirectoriesRel;
+import org.imyuyu.cg.apps.task.Task;
 import org.imyuyu.cg.apps.template.Template;
 import org.imyuyu.cg.generator.GeneratorContext;
 import org.imyuyu.cg.generator.TemplateEngineFactory;

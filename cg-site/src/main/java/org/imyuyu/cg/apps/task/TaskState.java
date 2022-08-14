@@ -1,4 +1,4 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
 
 /**
  * 执行结果状态

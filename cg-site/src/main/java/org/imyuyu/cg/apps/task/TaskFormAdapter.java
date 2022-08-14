@@ -1,8 +1,10 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
 
 import lombok.AllArgsConstructor;
 import org.imyuyu.cg.apps.datasource.DataSource;
 import org.imyuyu.cg.apps.datasource.DataSourceService;
+import org.imyuyu.cg.apps.strategy.Strategy;
+import org.imyuyu.cg.apps.strategy.StrategyService;
 import org.imyuyu.cg.apps.user.User;
 import org.springframework.stereotype.Service;
 

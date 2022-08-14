@@ -1,4 +1,6 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
+
+import org.imyuyu.cg.apps.strategy.Strategy;
 
 import javax.persistence.OneToMany;
 

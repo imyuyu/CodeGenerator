@@ -1,7 +1,8 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.imyuyu.cg.apps.build.BuildService;
 import org.imyuyu.cg.apps.user.User;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

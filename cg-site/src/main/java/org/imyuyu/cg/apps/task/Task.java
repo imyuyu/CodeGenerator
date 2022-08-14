@@ -1,12 +1,12 @@
-package org.imyuyu.cg.apps.strategy;
+package org.imyuyu.cg.apps.task;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.*;
 
 import org.imyuyu.cg.apps.datasource.DataSource;
+import org.imyuyu.cg.apps.strategy.Strategy;
 import org.imyuyu.cg.common.po.AbstractPO;
 
 import lombok.Getter;
